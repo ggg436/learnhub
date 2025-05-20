@@ -4,7 +4,7 @@ import { BookOpen, User, GraduationCap } from 'lucide-react';
 import { UserButton, useUser } from '@clerk/nextjs';
 
 export default function Navbar() {
-  const { isSignedIn, user } = useUser();
+  const { isSignedIn } = useUser();
 
   return (
     <nav className="fixed top-0 w-full bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-100 dark:border-gray-800 z-50">

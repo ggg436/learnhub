@@ -1,4 +1,4 @@
-import { BookOpen, Clock, GraduationCap, BarChart } from 'lucide-react';
+import { BookOpen, Clock, GraduationCap } from 'lucide-react';
 import { auth, currentUser } from '@clerk/nextjs';
 import { redirect } from 'next/navigation';
 

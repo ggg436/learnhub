@@ -1,4 +1,4 @@
-import { BookOpen, GraduationCap, Users, Award, CheckCircle } from 'lucide-react';
+import { BookOpen, Users, Award, CheckCircle } from 'lucide-react';
 
 export default function Home() {
   return (
