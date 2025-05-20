@@ -1,102 +1,112 @@
-import Image from "next/image";
+import { BookOpen, GraduationCap, Users, Award, CheckCircle } from 'lucide-react';
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="min-h-screen">
+      {/* Hero Section */}
+      <section className="pt-32 pb-20 px-6 text-center bg-gradient-to-b from-blue-50 to-white dark:from-gray-800 dark:to-gray-900">
+        <h1 className="text-5xl font-bold max-w-3xl mx-auto mb-6 dark:text-white">
+          Transform Your Learning Experience with Modern Education
+        </h1>
+        <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
+          Join thousands of students mastering new skills through our interactive courses and expert-led instruction.
+        </p>
+        <div className="flex gap-4 justify-center">
+          <button className="bg-blue-600 text-white px-8 py-4 rounded-full text-lg hover:bg-blue-700 transition-colors">
+            Start Learning Free
+          </button>
+          <button className="border-2 border-gray-300 dark:border-gray-600 text-gray-600 dark:text-gray-300 px-8 py-4 rounded-full text-lg hover:border-blue-500 hover:text-blue-600 transition-colors">
+            View Courses
+          </button>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+      </section>
+
+      {/* Features Grid */}
+      <section className="py-20 px-6 bg-white dark:bg-gray-900">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl font-bold text-center mb-16 dark:text-white">Why Choose EduMaster?</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              { icon: BookOpen, title: "100+ Courses", description: "From programming to creative arts" },
+              { icon: Users, title: "Expert Instructors", description: "Industry professionals & educators" },
+              { icon: Award, title: "Certifications", description: "Recognized completion certificates" },
+            ].map((feature, index) => (
+              <div key={index} className="p-8 rounded-xl bg-gray-50 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+                <feature.icon className="w-12 h-12 mb-4 text-blue-600 dark:text-blue-400" />
+                <h3 className="text-xl font-semibold mb-2 dark:text-white">{feature.title}</h3>
+                <p className="text-gray-600 dark:text-gray-300">{feature.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Pricing Section */}
+      <section className="py-20 px-6 bg-gray-50 dark:bg-gray-800">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl font-bold text-center mb-16 dark:text-white">Simple Pricing</h2>
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            {[
+              { name: "Starter", price: "0", features: ["Basic Courses", "Community Support", "Limited Access"] },
+              { name: "Pro", price: "29", features: ["All Courses", "Certifications", "1:1 Support", "Projects"], featured: true },
+              { name: "Team", price: "99", features: ["Unlimited Seats", "Team Dashboard", "Priority Support", "Custom Content"] },
+            ].map((plan, index) => (
+              <div key={index} className={`p-8 rounded-xl ${plan.featured ? 'bg-blue-600 dark:bg-blue-800 border-2 border-blue-500' : 'bg-white dark:bg-gray-900'} transition-transform hover:scale-105`}>
+                <div className={`mb-6 ${plan.featured ? 'text-white' : 'dark:text-white'}`}>
+                  <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
+                  <div className="text-4xl font-bold mb-4">
+                    ${plan.price}<span className="text-lg text-gray-500">/month</span>
+                  </div>
+                  <ul className="space-y-3">
+                    {plan.features.map((feature, fIndex) => (
+                      <li key={fIndex} className="flex items-center gap-2">
+                        <CheckCircle className="w-5 h-5" />
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <button className={`w-full py-3 rounded-lg font-medium ${plan.featured ? 'bg-white text-blue-600 hover:bg-gray-100' : 'bg-blue-600 text-white hover:bg-blue-700'}`}>
+                  Choose {plan.name}
+                </button>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-gray-900 text-gray-300 py-12 px-6">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div>
+            <h4 className="text-white text-lg font-semibold mb-4">EduMaster</h4>
+            <p className="text-sm">Empowering learners worldwide through accessible education.</p>
+          </div>
+          <div>
+            <h4 className="text-white text-lg font-semibold mb-4">Product</h4>
+            <ul className="space-y-2 text-sm">
+              <li><a href="#" className="hover:text-white">Courses</a></li>
+              <li><a href="#" className="hover:text-white">Pricing</a></li>
+              <li><a href="#" className="hover:text-white">Features</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 className="text-white text-lg font-semibold mb-4">Company</h4>
+            <ul className="space-y-2 text-sm">
+              <li><a href="#" className="hover:text-white">About</a></li>
+              <li><a href="#" className="hover:text-white">Blog</a></li>
+              <li><a href="#" className="hover:text-white">Careers</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 className="text-white text-lg font-semibold mb-4">Legal</h4>
+            <ul className="space-y-2 text-sm">
+              <li><a href="#" className="hover:text-white">Privacy</a></li>
+              <li><a href="#" className="hover:text-white">Terms</a></li>
+              <li><a href="#" className="hover:text-white">Contact</a></li>
+            </ul>
+          </div>
+        </div>
       </footer>
     </div>
   );
